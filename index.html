@@ -1,0 +1,81 @@
+<?php
+include "count.php";
+
+?>
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="CSS/style.css">
+  <title>Лабораторная №1</title>
+</head>
+<body>
+<header>
+  <p>Ф.И.О.: Толочек Дмитрий Сергеевич</p>
+  <p>Группа: P3230</p>
+  <p>Вариант: 2626</p>
+</header>
+<table id="formTable">
+  <tbody>
+  <form id="ajax_form"  method="post" onsubmit="return false;">
+    <tr>
+      <td class="xChanger">
+        <p class="info">1. Choose variable X.</p>
+        <table class="xRadioCont">
+          <tr>
+            <td><input type="radio" name="xCord" value="-2" checked="checked"> -2</td>
+            <td><input type="radio" name="xCord" value="-1.5"> -1.5</td>
+          </tr>
+          <tr>
+            <td><input type="radio" name="xCord" value="-1"> -1</td>
+            <td><input type="radio" name="xCord" value="-0.5"> -0.5</td>
+          </tr>
+          <tr>
+            <td><input type="radio" name="xCord" value="0.5"> 0.5</td>
+            <td><input type="radio" name="xCord" value="1"> 1</td>
+          </tr>
+          <tr>
+            <td><input type="radio" name="xCord" value="1.5"> 1.5</td>
+            <td><input type="radio" name="xCord" value="2"> 2</td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="radio" name="xCord" value="0"> 0</td>
+          </tr>
+        </table>
+      </td>
+      <td class="taskImage" rowspan="3"><img src="Images/Graphic.png" alt="График не прогужен"></td>
+    </tr>
+    <tr>
+      <td class="yChanger">
+        <p class="info">2. Choose variable Y.</p>
+        <input type="text" name="yCord" size=6 maxlength="15" placeholder="от -5 до 3" required>
+      </td>
+    </tr>
+    <tr>
+      <td class="rChanger">
+        <p class="info">3. Choose variable R.</p>
+        <input class="send" type="submit" name="rParametr" value="1">
+        <input class="send" type="submit" name="rParametr" value="2">
+        <input class="send" type="submit" name="rParametr" value="3">
+        <input class="send" type="submit" name="rParametr" value="4">
+        <input class="send" type="submit" name="rParametr" value="5">
+      </td>
+    </tr>
+  </form>
+  <script src="JS/jquery-3.5.1.js" type="text/javascript"></script>
+  <script src="JS/script.js" type="text/javascript"></script>
+  </tbody>
+</table>
+<input id="clearTable" type="button" name="rParametr" value="Clear Table" onclick="clearTable()">
+<table id="ResultTable">
+  <tr>
+    <th class="head_title">Script started</th>
+    <th class="head_title">X</th>
+    <th class="head_title">Y</th>
+    <th class="head_title">R</th>
+    <th class="head_title">Time(ms)</th>
+    <th class="head_title">Result</th>
+  </tr>
+</table>
+</body>
+</html>
