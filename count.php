@@ -18,14 +18,7 @@ function isInGrid($x, $y, $r){
           $startTime = date('H:i:s');
           $result = isInGrid($_POST["xCord"], $_POST["yCord"], $_POST["rParametr"])?"true":"false";
           $time = sprintf('%.5F', (microtime(true) - $scriptStarted)*1000);
-          $answer = "<tr class='deletebale'>\n" .
-              "    <th class=\"head_title\">$startTime</th>\n" .
-              "    <th class=\"head_title\">$xCord</th>\n" .
-              "    <th class=\"head_title\">$yCord</th>\n" .
-              "    <th class=\"head_title\">$rParametr</th>\n" .
-              "    <th class=\"head_title\">$time</th>\n" .
-              "    <th class=\"head_title\">$result</th>\n" .
-              "  </tr>";
+          $answer = "$startTime"."&"."$xCord"."&"."$yCord"."&"."$rParametr"."&"."$time"."&"."$result";
           echo $answer;
       } else {
           echo "Ошибка со стороны сервера!";

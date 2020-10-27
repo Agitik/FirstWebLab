@@ -1,3 +1,9 @@
+window.onload = function () {
+  for(let i=0; i<localStorage.length; i++){
+    addString(localStorage.getItem(`${i}`))
+  }
+}
+
 const MIN_Y = -5;
 const MAX_Y = 3;
 var rParametr = 0;
@@ -16,6 +22,8 @@ $('.send').click(function () {
   validateAndSend()
 })
 
+
+
 // function test(){
 //   let info = `xCord=${$('input[name="xCord"]:checked').val()}&yCord=${$('input[name="yCord"]').val()}&rParametr=${rParametr}`
 //   alert(info)
@@ -28,7 +36,8 @@ function sendAndGetAjax() {
     dataType: 'text',
     data: `xCord=${$('input[name="xCord"]:checked').val()}&yCord=${$('input[name="yCord"]').val()}&rParametr=${rParametr}`,
     success: function (result) {
-      $('#ResultTable').append(result)
+      addString(result)
+      localStorage.setItem(`${localStorage.length++}`, result)
     },
     error: function () {
       alert("Ошибка!")
@@ -40,3 +49,18 @@ function clearTable() {
   $(".deletebale").remove()
 }
 
+function addString(result) {
+  if(result != null){
+    table = $('#ResultTable')
+    let res = result.split("&")
+    addable = '<tr>'
+        +`<td class="head_title">${res[0]}</td>`
+        +`<td class="head_title">${res[1]}</td>`
+        +`<td class="head_title">${res[2]}</td>`
+        +`<td class="head_title">${res[3]}</td>`
+        +`<td class="head_title">${res[4]}</td>`
+        +`<td class="head_title">${res[5]}</td>`
+        +'</tr>'
+    table.append(addable)
+  }
+}
