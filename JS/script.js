@@ -1,3 +1,19 @@
+function addString(result) {
+  if(result != null){
+    table = $('#ResultTable')
+    let res = result.split("&")
+    addable = '<tr>'
+        +`<td class="head_title">${res[0]}</td>`
+        +`<td class="head_title">${res[1]}</td>`
+        +`<td class="head_title">${res[2]}</td>`
+        +`<td class="head_title">${res[3]}</td>`
+        +`<td class="head_title">${res[4]}</td>`
+        +`<td class="head_title">${res[5]}</td>`
+        +'</tr>'
+    table.append(addable)
+  }
+}
+
 window.onload = function () {
   for(let i=0; i<localStorage.length; i++){
     addString(localStorage.getItem(`${i}`))
@@ -49,18 +65,4 @@ function clearTable() {
   $(".deletebale").remove()
 }
 
-function addString(result) {
-  if(result != null){
-    table = $('#ResultTable')
-    let res = result.split("&")
-    addable = '<tr>'
-        +`<td class="head_title">${res[0]}</td>`
-        +`<td class="head_title">${res[1]}</td>`
-        +`<td class="head_title">${res[2]}</td>`
-        +`<td class="head_title">${res[3]}</td>`
-        +`<td class="head_title">${res[4]}</td>`
-        +`<td class="head_title">${res[5]}</td>`
-        +'</tr>'
-    table.append(addable)
-  }
-}
+
