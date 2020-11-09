@@ -1,6 +1,6 @@
 <?php
  $canBeX = isset($_POST["xCord"]) ? in_array($_POST["xCord"], array(-2, -1.5, -1, -0.5, 0, 0.5, 1, 1.5, 2)) : false;
- $canBeR = isset($__POST["rParametr"]) ? in_array($_POST["rParametr"], array(1, 2, 3, 4, 5)) : false;
+ $canBeR = isset($_POST["rParametr"]) ? in_array($_POST["rParametr"], array(1, 2, 3, 4, 5)) : false;
  $canBeY = isset($_POST["yCord"]) ? $_POST["yCord"] > -5 && $_POST["yCord"] < 3 : false;
  $scriptStarted = microtime(true);
    date_default_timezone_set('Europe/Moscow');
